@@ -1,12 +1,86 @@
-# React + Vite
+# Learn API 🔌
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A React-based interactive learning hub designed to teach API fundamentals, creation, integration, authentication, and CORS — all in one place.
 
-Currently, two official plugins are available:
+## 🚀 Live Demo
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+[View Deployed App](https://dawoodShahzad61004.github.io/Learn-Api)
 
-## Expanding the ESLint configuration
+## 🧠 Features
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- ✅ API Overview and REST principles
+- ✅ Mock API Creation examples (Node.js/Express style)
+- ✅ Integration section using Fetch with live testing
+- ✅ JWT Security: encode & decode interactively
+- ✅ CORS & Auth: test cross-origin JWT-authenticated requests
+- ✅ API Testing Tool to simulate real-world requests
+
+---
+
+## 📁 Project Structure
+
+```
+src/
+│
+├── components/
+│   ├── Overview.jsx
+│   ├── APICreation.jsx
+│   ├── Integration.jsx
+│   ├── JWTandSecurity.jsx
+│   ├── CORSandAuth.jsx
+│   ├── APITesting.jsx
+│   └── CodeBlock.jsx
+│
+├── App.jsx
+└── main.jsx
+```
+
+---
+
+## 🧩 Tech Stack
+
+- React 19
+- Vite
+- Tailwind CSS
+- Lucide Icons
+- JWT logic (frontend-only demo)
+- GitHub Pages for deployment
+
+---
+
+## 🛠 Local Setup
+
+```bash
+git clone https://github.com/dawoodShahzad61004/Learn-Api.git
+cd Learn-Api
+npm install
+npm run dev
+```
+
+Then visit: [http://localhost:5173](http://localhost:5173)
+
+---
+
+## 🚀 Deployment
+
+Deployed via **GitHub Pages**:
+
+```bash
+npm run build
+npm run deploy
+```
+
+Make sure `vite.config.js` includes:
+```js
+base: "/Learn-Api/"
+```
+
+---
+
+## 📜 License
+
+This project is licensed for educational/demo purposes. Use and expand freely!
+
+---
+
+Made with ❤️ by [@dawoodShahzad61004](https://github.com/dawoodShahzad61004)

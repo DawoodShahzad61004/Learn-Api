@@ -1,28 +1,28 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
 export const SecuritySection = () => {
   const [decoded, setDecoded] = useState(null);
   const [token, setToken] = useState("");
 
-  const [payload, setPayload] = useState('');
-  const [secret, setSecret] = useState('');
-  const [encoded, setEncoded] = useState('');
+  const [payload, setPayload] = useState("");
+  const [secret, setSecret] = useState("");
+  const [encoded, setEncoded] = useState("");
 
   const base64url = (source) => {
     return btoa(source)
-      .replace(/=+$/, '')
-      .replace(/\+/g, '-')
-      .replace(/\//g, '_');
+      .replace(/=+$/, "")
+      .replace(/\+/g, "-")
+      .replace(/\//g, "_");
   };
 
   const handleEncode = () => {
     try {
-      const header = { alg: 'HS256', typ: 'JWT' };
+      const header = { alg: "HS256", typ: "JWT" };
       const encodedHeader = base64url(JSON.stringify(header));
       const encodedPayload = base64url(payload);
 
       // NOTE: Real JWTs use HMAC SHA256 signature; this is a mock
-      const fakeSignature = base64url(secret || 'secret');
+      const fakeSignature = base64url(secret || "secret");
 
       const jwt = `${encodedHeader}.${encodedPayload}.${fakeSignature}`;
       setEncoded(jwt);
@@ -33,13 +33,13 @@ export const SecuritySection = () => {
 
   const handleDecode = () => {
     try {
-      const base64Url = token.split('.')[1];
-      const base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
+      const base64Url = token.split(".")[1];
+      const base64 = base64Url.replace(/-/g, "+").replace(/_/g, "/");
       const jsonPayload = decodeURIComponent(
         atob(base64)
-          .split('')
-          .map((c) => '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2))
-          .join('')
+          .split("")
+          .map((c) => "%" + ("00" + c.charCodeAt(0).toString(16)).slice(-2))
+          .join("")
       );
       setDecoded(JSON.parse(jsonPayload));
     } catch (error) {
@@ -52,7 +52,10 @@ export const SecuritySection = () => {
       <div>
         <h2 className="text-2xl font-bold">JWT & Security</h2>
         <p>
-          Learn how to secure your APIs using <strong>JWT (JSON Web Tokens)</strong>. Understand authentication vs. authorization, token expiration, refresh tokens, and how to safely store and verify them on server/client.
+          Learn how to secure your APIs using{" "}
+          <strong>JWT (JSON Web Tokens)</strong>. Understand authentication vs.
+          authorization, token expiration, refresh tokens, and how to safely
+          store and verify them on server/client.
         </p>
         <ul className="list-disc pl-6 mt-3">
           <li>JWT Structure: Header, Payload, Signature</li>
@@ -65,7 +68,8 @@ export const SecuritySection = () => {
       <div className="bg-white p-6 border rounded-lg shadow-sm">
         <h3 className="text-xl font-semibold mb-2">🛠 Practice: Decode a JWT</h3>
         <p className="mb-2 text-sm text-gray-600">
-          Paste a JWT token below and click <strong>Decode</strong> to view its payload (the middle part of the token).
+          Paste a JWT token below and click <strong>Decode</strong> to view its
+          payload (the middle part of the token).
         </p>
         <textarea
           value={token}
@@ -92,9 +96,12 @@ export const SecuritySection = () => {
       </div>
 
       <div className="bg-white p-6 border rounded-lg shadow-sm">
-        <h3 className="text-xl font-semibold mb-2">🧪 Practice: Encode Payload to JWT</h3>
+        <h3 className="text-xl font-semibold mb-2">
+          🧪 Practice: Encode Payload to JWT
+        </h3>
         <p className="mb-2 text-sm text-gray-600">
-          Enter a JSON payload and a secret to create a basic JWT (this is a mock, not secure).
+          Enter a JSON payload and a secret to create a basic JWT (this is a
+          mock, not secure).
         </p>
         <textarea
           value={payload}
@@ -120,7 +127,9 @@ export const SecuritySection = () => {
         {encoded && (
           <div className="mt-4 bg-gray-100 p-4 rounded-lg">
             <h4 className="font-semibold mb-2">Generated JWT:</h4>
-            <pre className="text-sm text-gray-800 overflow-x-auto break-all">{encoded}</pre>
+            <pre className="text-sm text-gray-800 overflow-x-auto break-all">
+              {encoded}
+            </pre>
           </div>
         )}
       </div>
