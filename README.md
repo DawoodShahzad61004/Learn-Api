@@ -3,7 +3,7 @@
 ![GitHub repo size](https://img.shields.io/github/repo-size/dawoodShahzad61004/Learn-Api)
 ![GitHub last commit](https://img.shields.io/github/last-commit/dawoodShahzad61004/Learn-Api)
 ![GitHub deployments](https://img.shields.io/github/deployments/dawoodShahzad61004/Learn-Api/github-pages)
-![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)a
+![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)
 # Learn API 🔌
 
 A React-based interactive learning hub designed to teach API fundamentals, creation, integration, authentication, and CORS — all in one place.
